@@ -17,9 +17,11 @@ class Buku extends BaseController
     }
 
 
+    /**
+     * Admin and Super Admin Area
+     */
     public function index()
     {
-
         $currentPage = $this->request->getVar('page_buku') ? $this->request->getVar('page_buku') : 1;
         //$buku = $this->bukuModel->findAll();
 
@@ -243,6 +245,10 @@ class Buku extends BaseController
 
         return redirect()->to('/buku');
     }
+
+    /**
+     * Member Area
+     */
 
     public function listbukuanggota()
     {

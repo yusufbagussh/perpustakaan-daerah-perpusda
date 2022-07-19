@@ -23,11 +23,11 @@
     </li>
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fas fa-fw fa-user-edit"></i>
             <span>Edit Profile</span></a>
-    </li>
+    </li> -->
 
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -52,10 +52,17 @@
     </li>
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link" href="<?= base_url('/admin/index') ?>">
             <i class="fas fa-fw fa-user-cog"></i>
             <span>Admin</span></a>
+    </li> -->
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="<?= base_url('/pinjamkembali/listpinjamkembali') ?>">
+            <i class="fas fa-fw fa-user-cog"></i>
+            <span>Peminjaman</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
@@ -64,12 +71,6 @@
             <i class="fas fa-fw fa-users"></i>
             <span>Anggota</span></a>
     </li>
-
-
-
-
-
-
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0">

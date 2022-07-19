@@ -13,6 +13,7 @@
                 <li class="nav-item"><a class="nav-link" href="#team">Tim</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('/') ?>">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('/buku/listbukuanggota') ?>">Buku</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url('/pinjamkembali/status') ?>">Status</a></li>
 
                 <?php if (logged_in()) : ?>
                     <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>

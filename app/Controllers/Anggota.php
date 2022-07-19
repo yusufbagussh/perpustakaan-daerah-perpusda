@@ -19,8 +19,8 @@ class Anggota extends BaseController
     public function index()
     {
         $data = [
-            'anggota' =>  $this->anggotaModel->findAll(),
-            'judul' => 'Daftar Anggota Perpustakaan'
+            'judul' => 'Daftar Anggota Perpustakaan',
+            'anggota' =>  $this->anggotaModel->findAll()
         ];
 
         return view('anggota/listanggota', $data);
@@ -108,7 +108,7 @@ class Anggota extends BaseController
 
         session()->setFlashdata('pesan', 'Data berhasil dimasukkan.');
 
-        return redirect()->to('/anggota');
+        return redirect()->to('/pages');
     }
 
     public function deleteAnggota($anggota_id)

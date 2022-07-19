@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 17, 2021 at 10:38 AM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.7
+-- Host: 127.0.0.1:3306
+-- Generation Time: Jul 19, 2022 at 01:59 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 8.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,8 +43,7 @@ CREATE TABLE `admin` (
 CREATE TABLE `anggota` (
   `anggota_id` int(11) NOT NULL,
   `anggota_nama` varchar(255) NOT NULL,
-  `anggota_username` varchar(10) NOT NULL,
-  `anggota_jenis_kelamin` varchar(10) NOT NULL,
+  `anggota_jenis_kelamin` varchar(20) NOT NULL,
   `anggota_tempat_lahir` varchar(255) NOT NULL,
   `anggota_tanggal_lahir` date NOT NULL,
   `anggota_alamat` varchar(255) NOT NULL,
@@ -53,6 +52,13 @@ CREATE TABLE `anggota` (
   `anggota_foto` varchar(50) NOT NULL,
   `users_id` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `anggota`
+--
+
+INSERT INTO `anggota` (`anggota_id`, `anggota_nama`, `anggota_jenis_kelamin`, `anggota_tempat_lahir`, `anggota_tanggal_lahir`, `anggota_alamat`, `anggota_nomor_identitas`, `anggota_jenis_kartu`, `anggota_foto`, `users_id`) VALUES
+(31, 'Yusuf Bagus Sungging Herlambang', 'Laki - Laki', 'Surakarta', '2022-07-18', 'Sukoharjo', 2147483647, 'SIM', '1658147061_8290c6f1c15cf90058bd.png', 7);
 
 -- --------------------------------------------------------
 
@@ -82,7 +88,18 @@ INSERT INTO `auth_activation_attempts` (`id`, `ip_address`, `user_agent`, `token
 (7, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', '5d81ab4001f4d132f437fa3dde40a566', '2021-12-14 09:32:19'),
 (8, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', '67174ec237627941036d27fe391fd6c5', '2021-12-14 09:36:54'),
 (9, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', '67174ec237627941036d27fe391fd6c5', '2021-12-14 09:37:17'),
-(10, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', 'ec6919b23aa79e41055b2b4592dfe341', '2021-12-14 09:41:07');
+(10, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', 'ec6919b23aa79e41055b2b4592dfe341', '2021-12-14 09:41:07'),
+(11, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', '40c59cf803bf702a843bcf6a124f10ca', '2021-12-18 05:52:57'),
+(12, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', '943840f48170d1d3bf240f90e26bde3b', '2021-12-18 05:53:15'),
+(13, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', 'dfd404196dd5a2dfbf095bc13aea8bca', '2021-12-18 06:17:44'),
+(14, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', 'b8a8220dff6ddb3e43064cb815adb7c0', '2021-12-18 06:21:31'),
+(15, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', 'dfd404196dd5a2dfbf095bc13aea8bca', '2021-12-18 06:28:46'),
+(16, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', 'dfd404196dd5a2dfbf095bc13aea8bca', '2021-12-18 06:28:59'),
+(17, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', '0c0d5d9698a4e1cea91a539eead551a0', '2021-12-18 06:29:06'),
+(18, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', '0c0d5d9698a4e1cea91a539eead551a0', '2021-12-18 06:29:12'),
+(19, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', '0c0d5d9698a4e1cea91a539eead551a0', '2021-12-18 06:29:13'),
+(20, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', '0c0d5d9698a4e1cea91a539eead551a0', '2021-12-18 06:29:14'),
+(21, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36', '0c0d5d9698a4e1cea91a539eead551a0', '2021-12-18 06:29:16');
 
 -- --------------------------------------------------------
 
@@ -101,8 +118,8 @@ CREATE TABLE `auth_groups` (
 --
 
 INSERT INTO `auth_groups` (`id`, `name`, `description`) VALUES
-(1, 'admin', 'site-admin'),
-(2, 'staff', 'site-staff'),
+(1, 'superadmin', 'site-superadmin'),
+(2, 'admin', 'site-admin'),
 (3, 'member', 'site-member');
 
 -- --------------------------------------------------------
@@ -142,7 +159,10 @@ CREATE TABLE `auth_groups_users` (
 
 INSERT INTO `auth_groups_users` (`group_id`, `user_id`) VALUES
 (1, 8),
-(3, 7);
+(1, 17),
+(2, 20),
+(3, 7),
+(3, 18);
 
 -- --------------------------------------------------------
 
@@ -181,7 +201,40 @@ INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `succ
 (15, '::1', 'bagus.herlambang@student.uns.ac.id', 8, '2021-12-14 10:32:31', 1),
 (16, '::1', 'yusufbagus', NULL, '2021-12-16 03:40:35', 0),
 (17, '::1', 'bagus.herlambang@student.uns.ac.id', 8, '2021-12-16 03:40:51', 1),
-(18, '::1', 'yusuf.herlambang27@gmail.com', 7, '2021-12-16 03:42:08', 1);
+(18, '::1', 'yusuf.herlambang27@gmail.com', 7, '2021-12-16 03:42:08', 1),
+(19, '::1', 'yusuf.herlambang27@gmail.com', 7, '2021-12-18 04:44:30', 1),
+(20, '::1', 'ridhofataulwan@student.uns.ac.id', 14, '2021-12-18 05:53:25', 1),
+(21, '::1', 'ridhofataulwan@student.uns.ac.id', 17, '2021-12-18 06:21:56', 1),
+(22, '::1', 'rifaul0609', NULL, '2021-12-18 06:22:47', 0),
+(23, '::1', 'rifaul0609', NULL, '2021-12-18 06:23:00', 0),
+(24, '::1', 'ridhofataulwan@gmail.com', 16, '2021-12-18 06:23:21', 1),
+(25, '::1', 'ridhofataulwan@gmail.com', 18, '2021-12-18 06:29:57', 1),
+(26, '::1', 'rifaul09', NULL, '2021-12-18 06:30:10', 0),
+(27, '::1', 'ridhofataulwan@student.uns.ac.id', 17, '2021-12-18 06:30:47', 1),
+(28, '::1', 'bagus.herlambang@student.uns.ac.id', 8, '2021-12-20 23:26:24', 1),
+(29, '::1', 'bagus.herlambang@student.uns.ac.id', 8, '2021-12-21 02:53:10', 1),
+(30, '::1', 'yusuf.herlambang27@gmail.com', 7, '2022-07-18 07:23:05', 1),
+(31, '::1', 'yusufbagus', NULL, '2022-07-18 07:26:24', 0),
+(32, '::1', 'bagus.herlambang@student.uns.ac.id', 8, '2022-07-18 07:26:29', 1),
+(33, '::1', 'yusufbagus063@gmail.com', 19, '2022-07-18 07:27:18', 1),
+(34, '::1', 'yusufbagus063@gmail.com', 20, '2022-07-18 09:39:07', 1),
+(35, '::1', 'bagus.herlambang@student.uns.ac.id', 8, '2022-07-18 09:39:45', 1),
+(36, '::1', 'yusuf.herlambang27@gmail.com', 7, '2022-07-18 09:39:57', 1),
+(37, '::1', 'yusufbagus063@gmail.com', 20, '2022-07-18 09:50:03', 1),
+(38, '::1', 'bagus.herlambang@student.uns.ac.id', 8, '2022-07-18 09:57:05', 1),
+(39, '::1', 'masbag', NULL, '2022-07-18 09:58:35', 0),
+(40, '::1', 'yusuf.herlambang27@gmail.com', 7, '2022-07-18 09:58:43', 1),
+(41, '::1', 'yusufbagus', NULL, '2022-07-18 10:11:41', 0),
+(42, '::1', 'bagus.herlambang@student.uns.ac.id', 8, '2022-07-18 10:11:53', 1),
+(43, '::1', 'yusufbagus063@gmail.com', 20, '2022-07-18 10:42:57', 1),
+(44, '::1', 'bagus.herlambang@student.uns.ac.id', 8, '2022-07-18 10:43:32', 1),
+(45, '::1', 'bagus.herlambang@student.uns.ac.id', 8, '2022-07-18 10:44:26', 1),
+(46, '::1', 'yusuf.herlambang27@gmail.com', 7, '2022-07-18 10:44:37', 1),
+(47, '::1', 'yusuf.herlambang27@gmail.com', 7, '2022-07-18 17:47:20', 1),
+(48, '::1', 'bagus.herlambang@student.uns.ac.id', 8, '2022-07-18 19:34:21', 1),
+(49, '::1', 'yusuf.herlambang27@gmail.com', 7, '2022-07-18 20:39:22', 1),
+(50, '::1', 'yusufbagus063@gmail.com', 20, '2022-07-18 20:39:43', 1),
+(51, '::1', 'yusuf.herlambang27@gmail.com', 7, '2022-07-18 20:46:32', 1);
 
 -- --------------------------------------------------------
 
@@ -262,15 +315,15 @@ CREATE TABLE `buku` (
   `buku_halaman` smallint(6) NOT NULL,
   `buku_gambar` varchar(50) NOT NULL,
   `buku_sinopsis` text NOT NULL,
-  `buku_created_at` datetime DEFAULT NULL,
-  `buku_updated_at` datetime DEFAULT NULL
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `buku`
 --
 
-INSERT INTO `buku` (`buku_id`, `buku_slug`, `buku_judul`, `buku_penulis`, `buku_penerbit`, `buku_kategori_id`, `buku_isbn`, `buku_stok`, `buku_halaman`, `buku_gambar`, `buku_sinopsis`, `buku_created_at`, `buku_updated_at`) VALUES
+INSERT INTO `buku` (`buku_id`, `buku_slug`, `buku_judul`, `buku_penulis`, `buku_penerbit`, `buku_kategori_id`, `buku_isbn`, `buku_stok`, `buku_halaman`, `buku_gambar`, `buku_sinopsis`, `created_at`, `updated_at`) VALUES
 (35, 'habis-gelap-terbitlah-terang1', 'Habis Gelap Terbitlah Terang1', 'R. A. Kartini', 'Balai Pustaka123', 1, 'ISBN 979-407-063-7', 4, 204, 'perpussekolah1623668273.jpg', 'Habis Gelap Terbitlah Terang adalah buku kumpulan surat yang ditulis oleh Kartini. Kumpulan surat tersebut dibukukan oleh J.H. Abendanon dengan judul Door Duisternis Tot Licht. Setelah Kartini wafat, J.H. Abendanon mengumpulkan dan membukukan surat-surat yang pernah dikirimkan R.A Kartini pada teman-temannya di Eropa', NULL, '2021-12-14 03:12:31'),
 (37, 'milea-suara-dari-dilan', 'Milea Suara dari Dilan', 'Pidi Baiq', 'Pastel BOOKS', 1, '978-602-0851-56-3', 0, 367, 'perpussekolah1623911192.jpg', 'Tidak ada kisah yang lebih Indah dari kisah cinta di SMA.Sama halnya dengan kisah cinta Dilan dan Milea.Dari yang awalnya benci hingga saling mencintai. Dari yang awalnya manis hingga menjadi rumit.Menjelang reuni akbar,Dilan memutuskan untuk menceritakan kembali masa masa itu.\r\n', NULL, NULL),
 (38, 'matahari', 'Matahari', 'Tere Liye', 'Gramedia Pustaka Utama', 1, '978-602-03-3211-6', 4, 400, 'perpussekolah1623911284.jpg', 'Raib, Ali, dan Seli dirundung duka atas tewasnya Ily, sahabat mereka, pada pertarungan di Klan Matahari. Tak hanya mereka, para kesatria Klan Bulan juga merasakan hal sama, sampai membuat Miss Selena tak bisa kembali ke Klan Bumi.', NULL, NULL),
@@ -280,8 +333,7 @@ INSERT INTO `buku` (`buku_id`, `buku_slug`, `buku_judul`, `buku_penulis`, `buku_
 (42, 'sang-pemimpi', 'Sang Pemimpi', 'Andrea Hirata', 'PT Bentang Pustaka', 1, '979-3062-92-4', 3, 292, 'perpussekolah1623911957.jpg', 'Kisah perjuangan hidup Ikal dan sepupunya, Arai, dan sahabatnya, Jimbron - sebuah potret para remaja yang tengah mencari identitas diri dan seksualitasnya, dengan latar belakang Belitong tempo dulu.', NULL, NULL),
 (43, 'baca-buku-ini-saat-engkau-lelah', 'Baca Buku Ini Saat Engkau Lelah', 'Munita Yeni', 'Psikologi Corner ', 1, '979-759-151-4', 3, 228, 'perpussekolah1623912408.jpg', 'Aku ingin terus bisa hidup dengan penuh kesadaran, untuk diriku sendiri, jangan pernah kalian meninggalkanku, membenciku, atau ingin membunuhku. Aku sangat membutuhkanmu. Mari kita hidup dengan saling mencintai mulai saat ini\r\nTerkadang kita terlalu sibuk mencintai ini dan itu bahkan sampai kita lupa untuk mencintai diri sendiri, dan itu sungguh melelahkan. Mengapa manusia mulai lupa bagaimana cara untuk mencintai dirinya sendiri? Bukankah sangat melelahkan ketika kalian ditinggalkan seseorang? Jika diri kalian sendiri yang meninggalkan dirimu, betapa sunyinya? Penelitian di Carnegei Mellon Universitg mengatakan bahwa rasa cinta menghasilkan emosi yang positif, hal ini mendorong sistem kekebalan tubuh orang tersebut menjadi lebih sehat', NULL, NULL),
 (44, 'maaf-tuhan-aku-hampir-menyerah', 'Maaf Tuhan Aku Hampir Menyerah', 'Alfialghazi', 'Sahima', 1, '978-602-674-447-0', 6, 246, 'perpussekolah1623912751.jpg', 'Tidak semua hal akan berjalan sesuai keinginanmu. Pada satu waktu, impianmu akan dipukul mundur, harapanmu terpatahkan, dan langkahmu dihentikan paksa. Dunia yang luas terasa begitu menyesakkan. Ramai, tetapi sepi. Ingin terus melangkah, takut terjatuh. Ingin putar balik, sudah tak mungkin tertempuh. Ingin menyerah, tetap saja tidak akan pernah menyelesaikan masalah. Setiap pilihan nyaris tak mampu kamu tanggung konsekuensinya.', NULL, NULL),
-(45, 'information-technology-business-start-up', 'Information Technology Business Start Up', 'Yudha Yudhanto', 'Elex Media Komputindo', 1, '978-602-04-8721-2', 0, 276, 'perpussekolah1623912939.jpg', 'Saat ini bisnis dengan model start-up sedang digandrungi. Bisnis dengan model ini menjadi tren dan banyak orang yang mencoba peruntungan di model bisnis ini. Banyaknya kesuksesan yang dituai oleh para pelaku bisnis start-up menjadi patokan impian dan motivasi.\r\n\r\nDunia Teknologi Informasi (TI) yang berkembang sangat pesat, telah menyulap dunia kita hingga ke detail paling sederhana di kehidupan. Hampir tak ada bidang yang tak tersentuh TI. TI digunakan untuk menyelesaikan berbagai masalah yang ada di tengah masyarakat. Sisi inilah yang banyak digunakan oleh para pegiat muda untuk dijadikan sebagai tonggak utama dalam berbisnis. Perangkat lunak, hardware, game, dan animasi merupakan kategori favorit untuk bisnis start-up berbasis IT ini.', NULL, NULL),
-(63, 'safdaf', 'safdaf', 'safdasfd', 'sdfasdfs', 1, 'sdfasdfsa', 20, 300, '1639466195_abba70665dbe4e3706aa.png', 'sdfsdafa', '2021-12-14 01:16:35', '2021-12-14 01:16:35');
+(45, 'information-technology-business-start-up', 'Information Technology Business Start Up', 'Yudha Yudhanto', 'Elex Media Komputindo', 1, '978-602-04-8721-2', 0, 276, 'perpussekolah1623912939.jpg', 'Saat ini bisnis dengan model start-up sedang digandrungi. Bisnis dengan model ini menjadi tren dan banyak orang yang mencoba peruntungan di model bisnis ini. Banyaknya kesuksesan yang dituai oleh para pelaku bisnis start-up menjadi patokan impian dan motivasi.\r\n\r\nDunia Teknologi Informasi (TI) yang berkembang sangat pesat, telah menyulap dunia kita hingga ke detail paling sederhana di kehidupan. Hampir tak ada bidang yang tak tersentuh TI. TI digunakan untuk menyelesaikan berbagai masalah yang ada di tengah masyarakat. Sisi inilah yang banyak digunakan oleh para pegiat muda untuk dijadikan sebagai tonggak utama dalam berbisnis. Perangkat lunak, hardware, game, dan animasi merupakan kategori favorit untuk bisnis start-up berbasis IT ini.', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -349,9 +401,29 @@ CREATE TABLE `pinjam_kembali` (
   `pinjam_kembali_id` int(11) NOT NULL,
   `pinjam_kembali_anggota_id` int(11) NOT NULL,
   `pinjam_kembali_buku_id` int(11) NOT NULL,
-  `tanggal_pinjam` datetime NOT NULL,
-  `tanggal_kembali` datetime NOT NULL,
+  `tanggal_pinjam` date NOT NULL,
+  `tanggal_kembali` date NOT NULL,
   `pinjam_kembali_status` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pinjam_kembali`
+--
+
+INSERT INTO `pinjam_kembali` (`pinjam_kembali_id`, `pinjam_kembali_anggota_id`, `pinjam_kembali_buku_id`, `tanggal_pinjam`, `tanggal_kembali`, `pinjam_kembali_status`) VALUES
+(2, 31, 35, '2022-07-19', '2022-07-21', 'Dipinjam');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `superadmin`
+--
+
+CREATE TABLE `superadmin` (
+  `superadmin_id` int(11) NOT NULL,
+  `superadmin_nama` int(255) NOT NULL,
+  `superadmin_foto` varchar(255) NOT NULL,
+  `id_users` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -385,8 +457,9 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `email`, `username`, `password_hash`, `reset_hash`, `reset_at`, `reset_expires`, `activate_hash`, `status`, `status_message`, `active`, `force_pass_reset`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (7, 'yusuf.herlambang27@gmail.com', 'masbag', '$2y$10$YDtQLylnAcK.0Fd2RlyQKOQgBh2sWinzO280FTMnPNx8v8W2qH34S', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-12-13 08:17:08', '2021-12-13 08:19:12', NULL),
 (8, 'bagus.herlambang@student.uns.ac.id', 'yusufbagus', '$2y$10$qGTf.Dy/EGIdkd4p7kKwZudosF2Q9t81GL3k2uYar2qKSiF1fAGB6', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-12-14 08:35:52', '2021-12-14 08:36:34', NULL),
-(12, 'herlambang.maulana45@gmail.com', 'dimasrisang', '$2y$10$rBMygtloYhtwmKYoCfsqsu1tq3Ql0L/4xTDQtJ8p4rPDC/tBipFlO', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-12-14 09:39:49', '2021-12-14 09:41:07', NULL),
-(13, 'ridhofataulwan@student.uns.ac.id', 'rifaul0906', '$2y$10$jkGPfKFYYd/0oc5KklYh5uYLGMUhTO8RlP7G62eyccPYppcE28cVi', NULL, NULL, NULL, '40c59cf803bf702a843bcf6a124f10ca', NULL, NULL, 0, 0, '2021-12-16 03:39:22', '2021-12-16 03:39:22', NULL);
+(17, 'ridhofataulwan@student.uns.ac.id', 'rifaul02', '$2y$10$UyYb2RFpNf9MtEHMhG/qQ.8Wk0U9zwDt3tbjLxDePLoaVZS.FR1ee', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-12-18 06:20:11', '2021-12-18 06:21:31', NULL),
+(18, 'ridhofataulwan@gmail.com', 'rifaul06', '$2y$10$3Jkh27YgT8QwCmSxo4mzte8nwLP1gNlpbMGYLatmAUvxPillqxw8i', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-12-18 06:25:43', '2021-12-18 06:29:16', NULL),
+(20, 'yusufbagus063@gmail.com', 'herlambang', '$2y$10$j5lKv9sciPY27LkXTXLK.OuSl5go52E1xRHb2sKbv9hCCGSw7ztfu', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2022-07-18 09:38:39', '2022-07-18 09:38:39', NULL);
 
 --
 -- Indexes for dumped tables
@@ -503,6 +576,13 @@ ALTER TABLE `pinjam_kembali`
   ADD KEY `pinjam_kembali_buku_id` (`pinjam_kembali_buku_id`);
 
 --
+-- Indexes for table `superadmin`
+--
+ALTER TABLE `superadmin`
+  ADD PRIMARY KEY (`superadmin_id`),
+  ADD KEY `id_users` (`id_users`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -524,13 +604,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `anggota_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `anggota_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `auth_activation_attempts`
 --
 ALTER TABLE `auth_activation_attempts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `auth_groups`
@@ -542,7 +622,7 @@ ALTER TABLE `auth_groups`
 -- AUTO_INCREMENT for table `auth_logins`
 --
 ALTER TABLE `auth_logins`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `auth_permissions`
@@ -590,13 +670,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `pinjam_kembali`
 --
 ALTER TABLE `pinjam_kembali`
-  MODIFY `pinjam_kembali_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `pinjam_kembali_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `superadmin`
+--
+ALTER TABLE `superadmin`
+  MODIFY `superadmin_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Constraints for dumped tables

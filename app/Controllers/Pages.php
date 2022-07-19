@@ -27,43 +27,10 @@ class Pages extends BaseController
             ];
             return view('pages/home', $data);
         } else if (in_groups('admin')) { {
-                return redirect()->to('/admin');
+                return redirect()->to('/buku');
             }
         } else if (in_groups('superadmin')) {
-            return redirect()->to('/admin');
+            return redirect()->to('/buku');
         }
-    }
-
-    public function about()
-    {
-        $data = [
-            'judul' => 'About Me'
-        ];
-        return view('pages/about', $data);
-    }
-
-    public function contact()
-    {
-        $data = [
-            'judul' => 'Contact Me',
-            'staff' => [
-                [
-                    'nama' => 'Yusuf Bagus Sungging Herlambang',
-                    'nim'  => 'V3420077',
-                    'instansi' => 'Universitas Sebelas Surakarta'
-                ],
-                [
-                    'nama' => 'Sinta Athaya Ramadhani',
-                    'nim'  => 'V3420071',
-                    'instansi' => 'Universitas Sebelas Surakarta'
-                ],
-                [
-                    'nama' => 'Saka Pangestu Putra',
-                    'nim'  => 'V3420080',
-                    'instansi' => 'Universitas Sebelas Surakarta'
-                ]
-            ]
-        ];
-        return view('pages/contact', $data);
     }
 }

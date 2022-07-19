@@ -18,6 +18,16 @@ class Admin extends BaseController
         $this->adminModel = new AdminModel();
     }
 
+    public function profil()
+    {
+        $data = [
+            'judul' => 'Daftar Admin Perpustakaan',
+            'admin' => $this->adminModel->getAdminById(user_id()),
+        ];
+
+        return view('admin/profil', $data);
+    }
+
     public function index()
     {
         $data = [
@@ -28,15 +38,6 @@ class Admin extends BaseController
         return view('admin/listadmin', $data);
     }
 
-    public function profil()
-    {
-        $data = [
-            'judul' => 'Daftar Admin Perpustakaan',
-            'admin' => $this->adminModel->getAdminById(user_id()),
-        ];
-
-        return view('admin/profil', $data);
-    }
 
     public function tambahAdmin()
     {

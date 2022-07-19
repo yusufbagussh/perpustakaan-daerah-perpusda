@@ -55,4 +55,13 @@ class AnggotaModel extends Model
     {
         return $this->db->table('anggota')->where(['anggota_id' => $anggota_id])->update($data);
     }
+
+    public function getAnggotaUsers()
+    {
+        $this
+            // ->join('users', 'users.id=anggota.users_id')
+            ->findAll();
+        // ->where('id', user()->id)
+        // ->get()->getResultArray()[0];
+    }
 }

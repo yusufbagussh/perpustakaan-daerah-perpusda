@@ -4,25 +4,20 @@
 <div class="container mt-lg-5">
     <center>
         <div>
-            <div class="mt-5 p-t-10">
+            <div class=" p-t-10">
+                <br>
                 <h2>Daftar Buku</h2>
             </div>
-            <!-- <div class="row">
-                <div class="col-6 mb-4">
-                    <input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Search for card name...">
-                </div>
-            </div> -->
             <div class="col-6">
                 <div class="input-group mb-3">
-                    <input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Masukkan Keyword">
+                    <input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Cari Judul Buku...">
                 </div>
             </div>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-2 kartu-konten" id="myProducts" style="display: none;">
                 <?php foreach ($buku as $b) : ?>
-                    <div class="col kartu">
+                    <div class="col kartu mt-4">
                         <div class="card shadow-sm h-100">
-                            <!-- <img src="./uploads/cover/<?php echo $b['buku_gambar'] ?>" class="card-img-top p-0" alt="..." width="auto"></img> -->
-                            <img src="/img/buku/<?= $b['buku_gambar']; ?>" class="card-img-top p-0" alt="..." width="auto" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" style="">
+                            <img src="/img/buku/<?= $b['buku_gambar']; ?>" class="card-img-top p-0 mt-3" alt="..." width="auto" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" style="">
                             <div class="card-body w-100" height="225">
                                 <rect width="100%" height="100%" fill="#55595c"></rect>
                                 <text x="50%" y="50%" fill="#eceeef" dy=".3em" style="padding-top: 10px;">
@@ -34,20 +29,13 @@
                             </div>
                             <div class="card-footer">
                                 <a href="/buku/detailbukuanggota/<?= $b['buku_slug']; ?>" class="btn btn-primary">Detail</a>
+                                <a href="/pinjamkembali/index/<?= $b['buku_slug']; ?>" class="btn btn-success">Sewa</a>
                             </div>
                         </div>
                     </div>
                 <?php endforeach; ?>
             </div>
-            <div class="pagination">
-                <!-- <li class="page-item previous-page disable"><a href="#" class="page-link">Prev</a></li>
-                <li class="page-item current-page active"><a href="#" class="page-link">1</a></li>
-                <li class="page-item dots"><a href="#" class="page-link">...</a></li>
-                <li class="page-item current-page"><a href="#" class="page-link">5</a></li>
-                <li class="page-item current-page"><a href="#" class="page-link">6</a></li>
-                <li class="page-item dots"><a href="#" class="page-link">...</a></li>
-                <li class="page-item current-page"><a href="#" class="page-link">10</a></li>
-                <li class="page-item next-page"><a href="#" class="page-link">Next</a></li> -->
+            <div class="pagination mt-3 mb-4 justify-content-center">
             </div>
         </div>
     </center>
@@ -100,7 +88,7 @@
 
     $(function() {
         var numberOfItem = $(".kartu-konten .kartu").length;
-        var limitPerPage = 2; //Banyak item pada satu halaman
+        var limitPerPage = 8; //Banyak item pada satu halaman
         var totalPages = Math.ceil(numberOfItem / limitPerPage);
         var paginationSize = 5; //Banyak element pagination yang terlihat
         var currentPage;
@@ -137,7 +125,7 @@
         );
 
         $(".kartu-konten").show();
-        showPage(2);
+        showPage(1);
 
         $(document).on("click", ".pagination li.current-page:not(.active)", function() {
             return showPage(+$(this).text());

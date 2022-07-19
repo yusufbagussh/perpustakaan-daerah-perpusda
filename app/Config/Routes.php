@@ -34,25 +34,55 @@ $routes->setAutoRoute(true);
 
 $routes->get('/', 'Pages::index');
 
+/**
+ * Manajemen Buku Route
+ */
 $routes->get('/buku/index', 'Buku::index');
-
 $routes->get('/buku/tambah', 'Buku::tambah');
-
+$routes->post('/buku/simpan', 'Buku::simpan');
 $routes->get('/buku/ubah/(:segment)', 'Buku::ubah/$1');
-
+$routes->get('/buku/update/(:segment)', 'Buku::update/$1');
 $routes->get('/buku/delete/(:num)', 'Buku::delete/$1');
+$routes->get('/buku/detail/(:any)', 'Buku::detail/$1');
 
-$routes->delete('/buku/(:num)', 'Buku::delete/$1');
+/**
+ * Majanemen Kategori Buku Route
+ */
+$routes->get('/kategori/index', 'Kategori::index');
+$routes->get('/kategori/tambahkategori', 'Kategori::tambahKategori');
+$routes->post('/kategori/simpankategori', 'Kategori::simpanKategori');
+$routes->get('/kategori/ubahkategori/(:num)', 'Kategori::ubahKategori');
+$routes->post('/kategori/updatekategori/(:num)', 'Kategori::updateKategori');
+$routes->post('/kategori/hapuskategori/(:num)', 'Kategori::hapusKategori');
 
-// $routes->get('/buku/(:any)', 'Buku::detail/$1');
+/**
+ * Manajemen Anggota Perpustakaan
+ */
+$routes->get('/anggota/index', 'Anggota::index');
+$routes->get('/anggota/tambahanggota', 'Anggota::tambahAnggota');
+$routes->post('/anggota/simpananggota', 'Anggota::simpanAnggota');
+$routes->get('/anggota/ubahanggota/(:num)', 'Anggota::ubahAnggota');
+$routes->post('/anggota/updateanggota/(:num)', 'Anggota::updateAnggota');
+$routes->post('/anggota/hapusanggota/(:num)', 'Anggota::hapusAnggota');
 
+/**
+ * Manajemen Peminjaman Buku
+ */
+$routes->get('/pinjamkembali/index/(:segment)', 'PinjamKembali::index/$1');
+$routes->post('/pinjamkembali/simpan/(:segment)', 'PinjamKembali::simpan/$1');
+$routes->get('/pinjamkembali/ubah/(:num)', 'PinjamKembali::ubah/$1');
+$routes->post('/pinjamkembali/update/(:num)', 'PinjamKembali::update/$1');
+$routes->get('/pinjamkembali/status', 'PinjamKembali::status');
+$routes->get('/pinjamkembali/listpinjamkembali', 'PinjamKembali::listPinjamKembali');
+
+
+/**
+ * Tampilan Daftar Buku Member
+ */
 $routes->get('/buku/listbukuanggota', 'Buku::listbukuanggota');
+$routes->get('/buku/detailbukuanggota/(:any)', 'Buku::detailbukuanggota/$1');
 
 //$routes->get('/buku/(:num)', 'Buku::detail/$1');
-
-//$routes->get('/tambah', 'Komik::tambah');
-//$routes->get('/detail/(:any)', 'Komik::detail/$1');
-
 /*
  * --------------------------------------------------------------------
  * Additional Routing
