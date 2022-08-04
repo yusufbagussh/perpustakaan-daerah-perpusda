@@ -37,7 +37,7 @@ $routes->get('/', 'Pages::index');
 /**
  * Manajemen Buku Route
  */
-$routes->get('/buku/index', 'Buku::index');
+$routes->get('/buku/index', 'Buku::index', ['filter' => 'role:admin']);
 $routes->get('/buku/tambah', 'Buku::tambah');
 $routes->post('/buku/simpan', 'Buku::simpan');
 $routes->get('/buku/ubah/(:segment)', 'Buku::ubah/$1');

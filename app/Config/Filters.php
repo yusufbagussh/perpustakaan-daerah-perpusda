@@ -7,6 +7,8 @@ use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
 use CodeIgniter\Filters\Honeypot;
 
+use App\Filters\FilterAdmin;
+
 class Filters extends BaseConfig
 {
     /**
@@ -22,6 +24,7 @@ class Filters extends BaseConfig
         'login'      => \Myth\Auth\Filters\LoginFilter::class,
         'role'       => \Myth\Auth\Filters\RoleFilter::class,
         'permission' => \Myth\Auth\Filters\PermissionFilter::class,
+        'filteradmin' => FilterAdmin::class,
     ];
 
     /**
@@ -64,5 +67,13 @@ class Filters extends BaseConfig
      */
     public $filters = [
         // 'login' => ['before' => ['buku/']],
+        'filtersuperadmin' => [
+            'before' => [
+                'opd', 'opd/add', 'opd/create', 'opd/edit', 'opd/update', 'opd/detail',
+                'users', 'users/add', 'users/create', 'users/edit', 'users/update', 'users/detail',
+                'opsi', 'opsi/addopsi', 'opsi/createopsi', 'opsi/edit', 'opsi/update',
+                'laporan/listopd', 'berita/listopd'
+            ]
+        ]
     ];
 }
